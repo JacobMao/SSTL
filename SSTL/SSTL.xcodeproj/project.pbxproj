@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53548D7D2060ED9900F2EF78 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53548D7C2060ED9900F2EF78 /* List.swift */; };
 		53D5BB7A204FD7F100B0042A /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D9F10B2033FED700A8B0D1 /* Stack.swift */; };
 		53D9F1052033EC0700A8B0D1 /* libSSTL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D9F0EE2033E95800A8B0D1 /* libSSTL.a */; };
 		53D9F10C2033FED700A8B0D1 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D9F10B2033FED700A8B0D1 /* Stack.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		53548D7C2060ED9900F2EF78 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = List.swift; path = ../../Sources/List.swift; sourceTree = "<group>"; };
 		53D9F0EE2033E95800A8B0D1 /* libSSTL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSSTL.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D9F1002033EC0700A8B0D1 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D9F1042033EC0700A8B0D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				53D9F10B2033FED700A8B0D1 /* Stack.swift */,
+				53548D7C2060ED9900F2EF78 /* List.swift */,
 			);
 			path = SSTL;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53D9F10C2033FED700A8B0D1 /* Stack.swift in Sources */,
+				53548D7D2060ED9900F2EF78 /* List.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
