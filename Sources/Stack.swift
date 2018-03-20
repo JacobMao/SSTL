@@ -25,6 +25,13 @@ public extension Stack {
 	}
 }
 
-public extension Stack: Equatable where T: Equatable {
+// TODO: Add conditional conformance for Equatable protocol in swift 5
+public extension Stack where T: Equatable {
+    static func ==(lhs: Stack, rhs: Stack) -> Bool {
+        return lhs._container == rhs._container
+    }
 
+    static func !=(lhs: Stack, rhs: Stack) -> Bool {
+        return !(lhs == rhs)
+    }
 }

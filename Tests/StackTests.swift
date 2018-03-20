@@ -87,12 +87,22 @@ class StackTests: XCTestCase {
         XCTAssertTrue(s.count == 3)
         XCTAssertTrue(s.top! == 3)
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+
+    func testEq() {
+        let smallRange = 0..<5
+        let q1 = smallRange.reduce(into: SSTL.Stack<Int>()) { s, i in
+            s.push(i)
         }
+        let q1Save = q1
+
+        let bigRange = 0..<10
+        let q2 = bigRange.reduce(into: SSTL.Stack<Int>()) { s, i in
+            s.push(i)
+        }
+        let q2Save = q2
+
+        XCTAssertTrue(q1 == q1Save)
+        XCTAssertTrue(q1 != q2)
+        XCTAssertTrue(q2 == q2Save)
     }
-    
 }
