@@ -1,8 +1,8 @@
 //
-//  Stack.swift
+//  List.swift
 //  SSTL
 //
-//  Created by Jacob Mao on 2/17/18.
+//  Created by Jacob Mao on 3/20/18.
 //
 //  The MIT License (MIT)
 //
@@ -28,40 +28,70 @@
 //  The name and characters used in the demo of this software are property of their
 //  respective owners.
 
-public struct Stack<T> {
-	fileprivate var _container = [T]()
+import Foundation
+
+private class ListNode<T> {
+    var next: ListNode<T>?
+    let value: T
+
+    init(value: T) {
+        self.value = value
+    }
 }
 
-public extension Stack {
-	var isEmpty: Bool {
-		return _container.isEmpty
-	}
-	
-	var count: Int {
-		return _container.count
-	}
-	
-	var top: T? {
-		return _container.last
-	}
-	
-	mutating func push(_ value: T) {
-		_container.append(value)
-	}
-	
-	@discardableResult
-	mutating func pop() -> T? {
-		return _container.popLast()
-	}
-}
+public struct ListIterator<T>: IteratorProtocol {
+    private var _node: ListNode<T>?
 
-// TODO: Add conditional conformance for Equatable protocol in swift 5
-public extension Stack where T: Equatable {
-    static func ==(lhs: Stack, rhs: Stack) -> Bool {
-        return lhs._container == rhs._container
+    fileprivate init(node: ListNode<T>?) {
+        _node = node
     }
 
-    static func !=(lhs: Stack, rhs: Stack) -> Bool {
-        return !(lhs == rhs)
+    mutating public func next() -> T? {
+        let ret = _node?.value
+        _node = _node?.next
+
+        return ret
+    }
+}
+
+public class List<T>: Sequence {
+    public var front: T? {
+        return _head?.value
+    }
+
+    public var underestimatedCount: Int {
+        return _count >= 0 ? _count : 0
+    }
+
+    private var _head: ListNode<T>?
+    private var _count: Int = 0
+
+    public func pushFront(_ value: T) {
+        let node = ListNode(value: value)
+
+        if let head = _head {
+            node.next = head
+            _head = node
+        } else {
+            _head = node
+        }
+
+        _count += 1
+    }
+
+    @discardableResult
+    public func popFront() -> T? {
+        guard let headNode = _head else {
+            return nil
+        }
+
+        _head = headNode.next
+        _count -= 1
+
+        return headNode.value
+    }
+
+    public func makeIterator() -> ListIterator<T> {
+        return ListIterator(node: _head)
     }
 }
