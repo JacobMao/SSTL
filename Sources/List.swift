@@ -55,11 +55,18 @@ public struct ListIterator<T>: IteratorProtocol {
 }
 
 public class List<T>: Sequence {
-    private var _head: ListNode<T>?
-    private var _tail: ListNode<T>?
-    private var _count: UInt = 0
+    public var front: T? {
+        return _head?.value
+    }
 
-    func pushFront(_ value: T) {
+    public var underestimatedCount: Int {
+        return _count >= 0 ? _count : 0
+    }
+
+    private var _head: ListNode<T>?
+    private var _count: Int = 0
+
+    public func pushFront(_ value: T) {
         let node = ListNode(value: value)
 
         if let head = _head {
@@ -67,29 +74,21 @@ public class List<T>: Sequence {
             _head = node
         } else {
             _head = node
-            _tail = node
         }
 
         _count += 1
     }
 
     @discardableResult
-    func popFront() -> T? {
-        
-    }
-
-    func pushBack(_ value: T) {
-        let node = ListNode(value: value)
-
-        if let tail = _tail {
-            tail.next = node
-            _tail = node
-        } else {
-            _head = node
-            _tail = node
+    public func popFront() -> T? {
+        guard let headNode = _head else {
+            return nil
         }
 
-        _count += 1
+        _head = headNode.next
+        _count -= 1
+
+        return headNode.value
     }
 
     public func makeIterator() -> ListIterator<T> {
