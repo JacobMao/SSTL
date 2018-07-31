@@ -1,5 +1,5 @@
 //
-//  List.swift
+//  SinglyLinkedList.swift
 //  SSTL
 //
 //  Created by Jacob Mao on 3/20/18.
@@ -39,7 +39,12 @@ private class ListNode<T> {
     }
 }
 
-public struct ListIterator<T>: IteratorProtocol {
+private class SentinelNode<T> {
+    var next: ListNode<T>?
+    var value: T?
+}
+
+public struct SinglyLinkedListIterator<T>: IteratorProtocol {
     private var _node: ListNode<T>?
 
     fileprivate init(node: ListNode<T>?) {
@@ -54,44 +59,44 @@ public struct ListIterator<T>: IteratorProtocol {
     }
 }
 
-public class List<T>: Sequence {
+public class SinglyLinkedList<T>: Sequence {
     public var front: T? {
-        return _head?.value
+        return _sentinel.next?.value
+    }
+
+    public var isEmpty: Bool {
+        return _sentinel.next == nil
     }
 
     public var underestimatedCount: Int {
         return _count >= 0 ? _count : 0
     }
 
-    private var _head: ListNode<T>?
+    // header sentinel
+    private var _sentinel = SentinelNode<T>()
     private var _count: Int = 0
+
 
     public func pushFront(_ value: T) {
         let node = ListNode(value: value)
 
-        if let head = _head {
-            node.next = head
-            _head = node
-        } else {
-            _head = node
-        }
+        node.next = _sentinel.next
+        _sentinel.next = node
 
         _count += 1
     }
 
     @discardableResult
     public func popFront() -> T? {
-        guard let headNode = _head else {
-            return nil
-        }
+        let removedNode = _sentinel.next
+        _sentinel.next = _sentinel.next?.next
 
-        _head = headNode.next
         _count -= 1
 
-        return headNode.value
+        return removedNode?.value
     }
 
-    public func makeIterator() -> ListIterator<T> {
-        return ListIterator(node: _head)
+    public func makeIterator() -> SinglyLinkedListIterator<T> {
+        return SinglyLinkedListIterator(node: _sentinel.next)
     }
 }

@@ -23,7 +23,7 @@ class ListTests: XCTestCase {
     }
     
     func testExample() {
-        let l = SSTL.List<Int>()
+        let l = SSTL.SinglyLinkedList<Int>()
         l.pushFront(1)
         l.pushFront(2)
         l.pushFront(3)
