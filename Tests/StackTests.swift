@@ -2,7 +2,7 @@
 //  StackTests.swift
 //  Tests
 //
-//  Created by ST21073 on 2018/02/14.
+//  Created by Jacob Mao on 2018/02/14.
 //  Copyright © 2018 JacobMao. All rights reserved.
 //
 

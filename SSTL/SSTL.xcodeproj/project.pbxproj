@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		46E12ABF213955FA00407094 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E12ABC213955FA00407094 /* Stack.swift */; };
 		46E12AC0213955FA00407094 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E12ABD213955FA00407094 /* List.swift */; };
-		46E12AC1213955FA00407094 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E12ABE213955FA00407094 /* Heap.swift */; };
+		46E12AC1213955FA00407094 /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E12ABE213955FA00407094 /* PriorityQueue.swift */; };
+		46E12AC3213A25F700407094 /* PriorityQueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E12AC2213A25F700407094 /* PriorityQueueTests.swift */; };
 		533651D22063597A00EE2292 /* ListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533651D12063597A00EE2292 /* ListTests.swift */; };
 		53D9F1052033EC0700A8B0D1 /* libSSTL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D9F0EE2033E95800A8B0D1 /* libSSTL.a */; };
 		53D9F10E2033FF6000A8B0D1 /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D9F10D2033FF6000A8B0D1 /* StackTests.swift */; };
@@ -40,7 +41,8 @@
 /* Begin PBXFileReference section */
 		46E12ABC213955FA00407094 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		46E12ABD213955FA00407094 /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
-		46E12ABE213955FA00407094 /* Heap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Heap.swift; sourceTree = "<group>"; };
+		46E12ABE213955FA00407094 /* PriorityQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriorityQueue.swift; sourceTree = "<group>"; };
+		46E12AC2213A25F700407094 /* PriorityQueueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PriorityQueueTests.swift; path = ../../Tests/PriorityQueueTests.swift; sourceTree = "<group>"; };
 		533651D12063597A00EE2292 /* ListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListTests.swift; path = ../../Tests/ListTests.swift; sourceTree = "<group>"; };
 		53D9F0EE2033E95800A8B0D1 /* libSSTL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSSTL.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D9F1002033EC0700A8B0D1 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,7 +74,7 @@
 			children = (
 				46E12ABC213955FA00407094 /* Stack.swift */,
 				46E12ABD213955FA00407094 /* List.swift */,
-				46E12ABE213955FA00407094 /* Heap.swift */,
+				46E12ABE213955FA00407094 /* PriorityQueue.swift */,
 			);
 			name = Sources;
 			path = ../Sources;
@@ -102,6 +104,7 @@
 				53D9F1042033EC0700A8B0D1 /* Info.plist */,
 				53D9F10D2033FF6000A8B0D1 /* StackTests.swift */,
 				533651D12063597A00EE2292 /* ListTests.swift */,
+				46E12AC2213A25F700407094 /* PriorityQueueTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -198,7 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46E12AC1213955FA00407094 /* Heap.swift in Sources */,
+				46E12AC1213955FA00407094 /* PriorityQueue.swift in Sources */,
 				46E12ABF213955FA00407094 /* Stack.swift in Sources */,
 				46E12AC0213955FA00407094 /* List.swift in Sources */,
 			);
@@ -210,6 +213,7 @@
 			files = (
 				53D9F10E2033FF6000A8B0D1 /* StackTests.swift in Sources */,
 				533651D22063597A00EE2292 /* ListTests.swift in Sources */,
+				46E12AC3213A25F700407094 /* PriorityQueueTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,7 +342,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -352,7 +356,7 @@
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
