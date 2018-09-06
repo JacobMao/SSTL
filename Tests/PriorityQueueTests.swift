@@ -46,20 +46,65 @@ class PriorityQueueTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        
-        let testData = (0..<10).shuffled()
-        print(testData)
-        let a = heapSorted(testData)
+    func testHeapSorting() {
+        let testData = (0..<1_000_000).shuffled()
+        let result1 = heapSorted(testData)
+        let result2 = testData.sorted()
+
+        assert(result1 == result2)
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+
+    func testConstruction() {
+        let qo = PriorityQueue(contentsOf: [0,1,2,3,4], isAscending: true)
+        let q = qo
+
+        assert(q.count == 5)
+        assert((q.top ?? -1) == 0)
     }
-    
+
+    func testEmpty() {
+        var q = PriorityQueue<Int>(isAscending: true)
+        assert(q.isEmpty)
+        q.push(1)
+        assert(!q.isEmpty)
+        q.pop()
+        assert(q.isEmpty)
+    }
+
+    func testPush() {
+        var q = PriorityQueue<Int>(isAscending: false)
+        q.push(1)
+        assert(q.top! == 1)
+        q.push(3)
+        assert(q.top! == 3)
+        q.push(2)
+        assert(q.top! == 3)
+    }
+
+    func testPop() {
+        var q = PriorityQueue<Int>(isAscending: false)
+        q.push(1)
+        assert(q.top! == 1)
+        q.push(3)
+        assert(q.top! == 3)
+        q.push(2)
+        assert(q.top! == 3)
+
+        q.pop()
+        assert(q.top! == 2)
+        q.pop()
+        assert(q.top! == 1)
+
+        q.pop()
+        assert(q.isEmpty)
+    }
+
+    func testCount() {
+        var q = PriorityQueue<Int>(isAscending: false)
+        assert(q.count == 0)
+        q.push(1)
+        assert(q.count == 1)
+        q.pop()
+        assert(q.count == 0)
+    }
 }
