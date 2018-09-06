@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46E12ABF213955FA00407094 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E12ABC213955FA00407094 /* Stack.swift */; };
+		46E12AC0213955FA00407094 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E12ABD213955FA00407094 /* List.swift */; };
+		46E12AC1213955FA00407094 /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E12ABE213955FA00407094 /* PriorityQueue.swift */; };
+		46E12AC3213A25F700407094 /* PriorityQueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E12AC2213A25F700407094 /* PriorityQueueTests.swift */; };
 		533651D22063597A00EE2292 /* ListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533651D12063597A00EE2292 /* ListTests.swift */; };
-		53548D7D2060ED9900F2EF78 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53548D7C2060ED9900F2EF78 /* List.swift */; };
-		53D5BB7A204FD7F100B0042A /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D9F10B2033FED700A8B0D1 /* Stack.swift */; };
 		53D9F1052033EC0700A8B0D1 /* libSSTL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D9F0EE2033E95800A8B0D1 /* libSSTL.a */; };
-		53D9F10C2033FED700A8B0D1 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D9F10B2033FED700A8B0D1 /* Stack.swift */; };
 		53D9F10E2033FF6000A8B0D1 /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D9F10D2033FF6000A8B0D1 /* StackTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,12 +39,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		46E12ABC213955FA00407094 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		46E12ABD213955FA00407094 /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
+		46E12ABE213955FA00407094 /* PriorityQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriorityQueue.swift; sourceTree = "<group>"; };
+		46E12AC2213A25F700407094 /* PriorityQueueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PriorityQueueTests.swift; path = ../../Tests/PriorityQueueTests.swift; sourceTree = "<group>"; };
 		533651D12063597A00EE2292 /* ListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListTests.swift; path = ../../Tests/ListTests.swift; sourceTree = "<group>"; };
-		53548D7C2060ED9900F2EF78 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = List.swift; path = ../../Sources/List.swift; sourceTree = "<group>"; };
 		53D9F0EE2033E95800A8B0D1 /* libSSTL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSSTL.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D9F1002033EC0700A8B0D1 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D9F1042033EC0700A8B0D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		53D9F10B2033FED700A8B0D1 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stack.swift; path = ../../Sources/Stack.swift; sourceTree = "<group>"; };
 		53D9F10D2033FF6000A8B0D1 /* StackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StackTests.swift; path = ../../Tests/StackTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,10 +69,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46E12ABB213955FA00407094 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				46E12ABC213955FA00407094 /* Stack.swift */,
+				46E12ABD213955FA00407094 /* List.swift */,
+				46E12ABE213955FA00407094 /* PriorityQueue.swift */,
+			);
+			name = Sources;
+			path = ../Sources;
+			sourceTree = "<group>";
+		};
 		53D9F0E52033E95800A8B0D1 = {
 			isa = PBXGroup;
 			children = (
-				53D9F0F02033E95800A8B0D1 /* SSTL */,
+				46E12ABB213955FA00407094 /* Sources */,
 				53D9F1012033EC0700A8B0D1 /* Tests */,
 				53D9F0EF2033E95800A8B0D1 /* Products */,
 			);
@@ -84,21 +98,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		53D9F0F02033E95800A8B0D1 /* SSTL */ = {
-			isa = PBXGroup;
-			children = (
-				53D9F10B2033FED700A8B0D1 /* Stack.swift */,
-				53548D7C2060ED9900F2EF78 /* List.swift */,
-			);
-			path = SSTL;
-			sourceTree = "<group>";
-		};
 		53D9F1012033EC0700A8B0D1 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				53D9F1042033EC0700A8B0D1 /* Info.plist */,
 				53D9F10D2033FF6000A8B0D1 /* StackTests.swift */,
 				533651D12063597A00EE2292 /* ListTests.swift */,
+				46E12AC2213A25F700407094 /* PriorityQueueTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -195,8 +201,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53D9F10C2033FED700A8B0D1 /* Stack.swift in Sources */,
-				53548D7D2060ED9900F2EF78 /* List.swift in Sources */,
+				46E12AC1213955FA00407094 /* PriorityQueue.swift in Sources */,
+				46E12ABF213955FA00407094 /* Stack.swift in Sources */,
+				46E12AC0213955FA00407094 /* List.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,8 +212,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				53D9F10E2033FF6000A8B0D1 /* StackTests.swift in Sources */,
-				53D5BB7A204FD7F100B0042A /* Stack.swift in Sources */,
 				533651D22063597A00EE2292 /* ListTests.swift in Sources */,
+				46E12AC3213A25F700407094 /* PriorityQueueTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,7 +342,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -349,7 +356,7 @@
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
